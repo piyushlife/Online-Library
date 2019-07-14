@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+{%load crispy_forms_tags%}
+{% block content %}
+<div class = "col-md-6">
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <h3>Please login to see this page.</h3>
+    {% endif %}
+  {% endif %}
+  <div class ="container-fluid">
+  <form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+
+  <div>
+    {{ form | crispy }}
+
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-sm">Login</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+  </div>
+  </form>
+  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+  </div>
+  <hr>
+  <div class = container-fluid>
+  <h3>Login Using</h3>
+  <button type="button" class="btn btn-default"><a href="{% url 'social:begin' 'facebook' %}">Facebook</a></button>
+  <button type="button" class="btn btn-default"><a href="{% url 'social:begin' 'google-oauth2' %}">Google</a></button>
+  </div>
+  <hr>
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <div class="container-fluid">
+    <p>Don't have an account? <a href = "{% url 'register' %}">Sign Up</a></p>
+  </div>
+</div>
+{% endblock %}

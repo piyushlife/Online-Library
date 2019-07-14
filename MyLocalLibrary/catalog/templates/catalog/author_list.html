@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>List of all Authors</h1>
+  {% if author_list %}
+  <ul>
+    {% for author in author_list %}
+      <li>
+        {% if author.wiki_link == None %}
+          <h3>{{ author }}</h3>
+        {% else %}
+          <h3><a href="{{author.wiki_link}}" target="_blank">{{ author }}</a></h3>
+        {% endif %}
+        <p>{{author.description}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no Authors yet.</p>
+  {% endif %}       
+{% endblock %}
