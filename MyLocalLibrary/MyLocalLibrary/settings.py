@@ -140,8 +140,8 @@ LOGIN_REDIRECT_URL = '/catalog/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'piyush.liferock@gmail.com'
-EMAIL_HOST_PASSWORD = 'tljdzazgfzlledpu'
+EMAIL_HOST_USER = '<Enter your own Host Id: (your email address or else)>'
+EMAIL_HOST_PASSWORD = '<Enter your own Password>'
 EMAIL_PORT = 587
 
 
@@ -162,11 +162,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH_SCOPE = [
     'https://www.googleapis.com/auth/userinfo.email',
 ]
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1019464122922-98sfqafiu5899uf1dk820jjc1126ea8f.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'VwofcTXmtT3RQldHBIrZMHM'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '<Enter your own Key>'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '<Enter your own Secret Key>'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2126251330969990'
-SOCIAL_AUTH_FACEBOOK_SECRET = '50da9014b10d988a7b4a5e34bf5b1016'
+SOCIAL_AUTH_FACEBOOK_KEY = '<Enter your own Key>'
+SOCIAL_AUTH_FACEBOOK_SECRET = '<Enter your own Secret Key>'
 
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
