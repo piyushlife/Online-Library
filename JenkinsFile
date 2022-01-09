@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Clone') {
+            steps {
+                echo 'Cloning Repo'
+                build quietPeriod: 5, job: 'testjob'
+            }
+        }
+        
+    }
+}
